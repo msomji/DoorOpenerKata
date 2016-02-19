@@ -1,36 +1,33 @@
 package main;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class DoorOpener {
-	
-	private int doorCount;
-	private int closedDoors;
-	private Object openedDoors;
-	private ArrayList<Integer> openDoorArray;
 
-	public void doors(int totalDoors) {
-		this.doorCount = totalDoors;
-		this.closedDoors = this.doorCount;
-		this.openedDoors = 0;
-		openDoorArray = new ArrayList<Integer>();
+	public int numberOfDoors;
+	List<String> updatedArray;
+
+	public List<String> convert(List<String> stringArray) {
+		numberOfDoors = stringArray.size();
+		updatedArray = stringArray;
+		for (String door : updatedArray) {
+			updatedArray.set(updatedArray.indexOf(door), update(door));
+		}
+		return updatedArray;
 	}
 
-	public int getDoors() {
-		return doorCount;
+	public String update(String status) {
+		return status == "open" ? "close" : "open";
 	}
-
-	public int getClosedDoors() {
-		return closedDoors;	
-	}
-
-	public Object getOpenDoors() {
-		return openedDoors;
-	}
-
-	public ArrayList<Integer> listDoors() {
-		return openDoorArray;
-	}
-	
 
 }
+
+
+
+
+
+
+
+
+
+
