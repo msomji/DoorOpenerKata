@@ -5,11 +5,9 @@ import java.util.List;
 
 public class DoorOpener {
 
-	public int numberOfDoors;
 	public List<String> updatedArray;
 
 	public List<String> convert(List<String> stringArray) {
-		numberOfDoors = stringArray.size();
 		updatedArray = stringArray;
 		
 		itterateThroughArray();
@@ -18,7 +16,7 @@ public class DoorOpener {
 
 	private int itterateThroughArray() {
 		int round = 1;
-		while (round <= numberOfDoors){
+		while (round <= updatedArray.size()){
 			updateDoorPosition(round);
 			round++;
 		}
@@ -33,7 +31,7 @@ public class DoorOpener {
 			};
 			position++;
 		}
-	};
+	}
 
 	public String update(String status) {
 		return status == "open" ? "close" : "open";
@@ -41,8 +39,8 @@ public class DoorOpener {
 
 	public List<Integer> openDoorPositions() {
 		List<Integer> resultArray = new ArrayList<Integer>();
-		
 		int position = 1;
+
 		for (String status : updatedArray){
 			if (status == "open"){
 				resultArray.add(position);
@@ -50,7 +48,7 @@ public class DoorOpener {
 		position++;
 		}
 		return resultArray;
-	};
+	}
 
 }
 

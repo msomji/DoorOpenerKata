@@ -39,14 +39,6 @@ public class DoorOpenerTest {
 		
 		assertThat(underTest.convert(stringArray), is(List.class));
 	}
-	
-	@Test
-	public void shouldsetLengthOfArrayTo1(){
-		setDoors(1);
-		underTest.convert(stringArray);
-		
-		assertThat(underTest.numberOfDoors, is(1));
-	}
 
 	@Test
 	public void shouldOpenAllDoorsIfTotalIs1(){
@@ -94,7 +86,7 @@ public class DoorOpenerTest {
 		result.add("close");
 		
 		assertThat(underTest.convert(stringArray), is(result));
-	};
+	}
 
 	@Test
 	public void shouldReturnPositionsOfOpenDoorsWith5Total(){
@@ -131,8 +123,8 @@ public class DoorOpenerTest {
 		while(number > 0){
 			stringArray.add("close");
 			number--;
-		};
-	};
+		}
+	}
 }
 
 
