@@ -1,0 +1,44 @@
+defaultTasks 'java'
+
+apply plugin: 'eclipse'
+apply plugin: 'java'
+
+repositories
+{
+	mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.0'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+
+        resources {
+            srcDir 'src'
+        }
+    }
+
+    test {
+        java {
+            srcDir 'test'
+        }
+
+        resources {
+            srcDir 'test'
+        }
+    }
+}
+
+dependencies
+{
+    compile 'com.google.guava:guava:18.0'
+
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.hamcrest:hamcrest-all:1.3'
+    testCompile 'org.mockito:mockito-all:1.9.5'    
+}
